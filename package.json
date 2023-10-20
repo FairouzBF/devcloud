@@ -1,13 +1,20 @@
 {
-  "name": "day-one-project",
+  "name": "devcloud",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -15,7 +22,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +44,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.30",
+    "eslint": "^8.51.0",
+    "eslint-plugin-jest": "^27.4.2",
+    "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
+    "prettier": "3.0.3"
   }
 }
