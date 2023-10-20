@@ -36,12 +36,8 @@ export const TodoList = () => {
   return (
     <div>
       <h1>Task List</h1>
-      <input
-        type="text"
-        placeholder="Add a task"
-        onKeyUp={handleKeyUp}
-      />
-      
+      <input type="text" placeholder="Add a task" onKeyUp={handleKeyUp} />
+
       <div>
         <button onClick={() => setFilter('all')}>All</button>
         <button onClick={() => setFilter('done')}>Done</button>
