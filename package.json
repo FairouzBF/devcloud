@@ -2,7 +2,7 @@
   "name": "devcloud",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://FairouzBF.github.io/devcloud/",
+  "homepage": "http://FairouzBF.github.io/devcloud",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
