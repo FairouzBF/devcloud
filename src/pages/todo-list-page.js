@@ -1,47 +1,47 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import useTasks from '../components/useTasks';
-import { IconButton } from '@mui/material';
-import Button from '@mui/material/Button';
-import ListIcon from '@mui/icons-material/List';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AddIcon from '@mui/icons-material/Add';
-import DoneIcon from '@mui/icons-material/Done';
-import CloseIcon from '@mui/icons-material/Close';
-import Input from '@mui/material/Input';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Typography from '@mui/material/Typography';
+import React, { useState, useEffect, useMemo } from "react";
+import useTasks from "../components/useTasks";
+import { IconButton } from "@mui/material";
+import Button from "@mui/material/Button";
+import ListIcon from "@mui/icons-material/List";
+import DeleteIcon from "@mui/icons-material/Delete";
+import AddIcon from "@mui/icons-material/Add";
+import DoneIcon from "@mui/icons-material/Done";
+import CloseIcon from "@mui/icons-material/Close";
+import Input from "@mui/material/Input";
+import Grid from "@mui/material/Grid";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Typography from "@mui/material/Typography";
 
 export const TodoList = () => {
-  const initialTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  const initialTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   const { tasks, addTask, deleteTask, toggleTask } = useTasks(initialTasks);
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
   const filteredTasks = useMemo(() => {
-    if (filter === 'done') {
+    if (filter === "done") {
       return tasks.filter((task) => task.done);
-    } else if (filter === 'notDone') {
+    } else if (filter === "notDone") {
       return tasks.filter((task) => !task.done);
     }
     return tasks;
   }, [tasks, filter]);
 
   const handleAddTask = (taskText) => {
-    if (taskText.trim() !== '') {
+    if (taskText.trim() !== "") {
       addTask(taskText.trim());
     }
   };
 
   const handleKeyUp = (e) => {
-    if (e.key === 'Enter' && e.target.value.trim() !== '') {
+    if (e.key === "Enter" && e.target.value.trim() !== "") {
       handleAddTask(e.target.value.trim());
-      e.target.value = '';
+      e.target.value = "";
     }
   };
 
@@ -56,7 +56,7 @@ export const TodoList = () => {
       <Grid item xs={12} sm={6}>
         <Button
           variant="contained"
-          onClick={() => handleAddTask(document.querySelector('input').value)}
+          onClick={() => handleAddTask(document.querySelector("input").value)}
           startIcon={<AddIcon />}
         >
           Add Task
@@ -65,21 +65,21 @@ export const TodoList = () => {
       <Grid item xs={12}>
         <Button
           variant="contained"
-          onClick={() => setFilter('all')}
+          onClick={() => setFilter("all")}
           startIcon={<ListIcon />}
         >
           All
         </Button>
         <Button
           variant="contained"
-          onClick={() => setFilter('done')}
+          onClick={() => setFilter("done")}
           startIcon={<DoneIcon />}
         >
           Done
         </Button>
         <Button
           variant="contained"
-          onClick={() => setFilter('notDone')}
+          onClick={() => setFilter("notDone")}
           startIcon={<CloseIcon />}
         >
           Not Done
@@ -92,12 +92,12 @@ export const TodoList = () => {
               <Grid item xs={12} sm={6}>
                 <span
                   style={{
-                    textDecoration: task.done ? 'line-through' : 'none',
+                    textDecoration: task.done ? "line-through" : "none",
                   }}
                   onClick={() => toggleTask(index)}
                 >
                   <Typography>
-                    {task.done ? '✅' : '❌'}
+                    {task.done ? "✅" : "❌"}
                     {task.text}
                   </Typography>
                 </span>
