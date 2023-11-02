@@ -4,31 +4,31 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:jest/recommended',
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
   ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: 'script',
+        sourceType: "script",
       },
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: ['react'],
+  plugins: ["react"],
   rules: {},
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
   },
-  ignorePatterns: ['build/'],
+  ignorePatterns: ["build/"],
 };
